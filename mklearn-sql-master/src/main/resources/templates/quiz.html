@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>DESIGN</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <!-- Bootstrap Icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+    <!-- SimpleLightbox plugin CSS-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container{
+            color:white;
+        }
+
+        .container>p {
+            font-size: 32px;
+        }
+        .conatiner p{
+            font-size: 30px;
+        }
+
+        .question {
+            width: 75%;
+        }
+
+        .options {
+            position: relative;
+            padding-left: 40px;
+        }
+
+        #options label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .options input {
+            opacity: 0;
+        }
+
+        .checkmark {
+            position: absolute;
+            top: -1px;
+            left: 0;
+            height: 25px;
+            width: 25px;
+            background-color: #555;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+        }
+
+        .options input:checked~.checkmark:after {
+            display: block;
+        }
+
+        .options .checkmark:after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            display: block;
+            background: white;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            transition: 300ms ease-in-out 0s;
+        }
+
+        .options input[type="radio"]:checked~.checkmark {
+            background: #21bf73;
+            transition: 300ms ease-in-out 0s;
+        }
+
+        .options input[type="radio"]:checked~.checkmark:after {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .btn-primary {
+            background-color: #555;
+            color: #ddd;
+            border: 1px solid #ddd;
+        }
+
+        .btn-primary:hover {
+            background-color: #21bf73;
+            border: 1px solid #21bf73;
+        }
+
+        .btn-success {
+            padding: 5px 25px;
+            background-color: #21bf73;
+        }
+
+        @media(max-width:576px) {
+            .question {
+                width: 100%;
+                word-spacing: 2px;
+            }
+        }
+        .button-mine{
+            width: 250px;
+            height: 60px;
+            background-color: #21bf73;
+            color: white;
+            border-radius: 5%;
+            border: 1px solid white;
+        }
+    </style>
+
+    <script>
+        function displayRadioValue() {
+            document.getElementById("resultFinal").innerHTML = "YOU HAVE SCORED PERFECTLY!"
+            document.getElementById("for-it").style.opacity = "100%";
+            document.getElementById("our-img").src = "/img/sertificate.jpg";
+        }
+    </script>
+</head>
+<body>
+
+<section class="page-section" id="about" style="background-color: lightcoral;">
+    <div class="container px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center rounded" style="padding: 20px 20px 20px 20px; border: 1px solid white;  ">
+            <div class="col-lg-8 text-center">
+                <h2 class="text-white mt-0">Thanks for completing our short quiz!</h2>
+                <hr class="divider divider-light" />
+
+                <!--1-->
+                <div class="container">
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. Properties of an object are stored as rows in a table</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A. True
+                                    <input type="radio" name="radio" value="A. True">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">False
+                                    <input type="radio" name="radio" value="False">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">Unexpected
+                                    <input type="radio" name="radio" value="30">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--2-->
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. Which of the following makes it possible for entities to share a relationship?</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A.
+                                    Multi-valued attributes
+                                    <input type="radio" name="radio2" value="Vary, depending on the time of day your blood pressure is checked">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">B.
+                                    A foreign key
+                                    <input type="radio" name="radio2" value="Get lower with high levels of stress">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">C.
+                                    A common attribute
+                                    <input type="radio" name="radio2" value="Are the same for people of the same age and weight">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">D.
+                                    The same number of attributes
+                                    <input type="radio" name="radio2" value="Stay the same throughout the day">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--3-->
+
+
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. A database contains the fields Pupil_no and Pupil_name. If we are given the Pupil_no then we will know Pupil_name.  This means that:</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A.
+                                    Pupil_name has a functionality with Pupil_ID
+                                    <input type="radio" name="radio3" value="Racing heartbeat">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">B.
+                                    Pupil_ID is functionally dependent on Pupil_name
+                                    <input type="radio" name="radio3" value="High body temperature">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">C.
+                                    Pupil_name is functionally dependent on Pupil_ID
+                                    <input type="radio" name="radio3" value="Fatigue">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">D.
+                                    These two attributes have a relationship
+                                    <input type="radio" name="radio3" value="It has no symptoms that you notice">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--4-->
+
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5" ><b>Q.
+                                What is the purpose of an indexed field in a database?</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A.
+                                    To speed up queries
+                                    <input type="radio" name="radio4" value="Obesity">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">B.
+                                    To verify values
+                                    <input type="radio" name="radio4" value="A family history of high blood pressure">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">C.
+                                    To create links between entities
+                                    <input type="radio" name="radio4" value="Smoking">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">All of the above
+                                    <input type="radio" name="radio4" value="All of the above">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--5-->
+
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. The requirement that each entity much have a unique primary key where the value of that primary key is not null, is known as the</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A.
+                                    Entity Integrity Rule
+                                    <input type="radio" name="radio5" value="120 over 80">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">B.
+                                    Referential Integrity Rule
+                                    <input type="radio" name="radio5" value="130 over 80">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">C.
+                                    Entity-Relationship Rule
+                                    <input type="radio" name="radio5" value="140 over 90">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">D.
+                                    Validation Index
+                                    <input type="radio" name="radio5" value="210 over 120">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. The frequency of a relationship between entities may be described by</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A.
+                                    Indexed fields
+                                    <input type="radio" name="radio6" value="Cancer">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">B.
+                                    Transitive dependencies
+                                    <input type="radio" name="radio6" value="Strokes">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">C.
+                                    Cardinality
+                                    <input type="radio" name="radio6" value="Diabetes">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">D.
+                                    Referential integrity
+                                    <input type="radio" name="radio6" value="Congestive heart failure">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--1-->
+                    <!--6-->
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. Which of the following is TRUE about relational database design?</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options">A.
+                                    The order of attributes is critical.
+                                    <input type="radio" name="radio7" value="120 over 80">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">Each column must be unique.
+                                    <input type="radio" name="radio7" value="Drinking a lot of alcohol">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">C.
+                                    No row should be duplicated.
+                                    <input type="radio" name="radio7" value="Getting a lot of calcium">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">D.
+                                    All tables must contain a foreign key.
+                                    <input type="radio" name="radio7" value="All of the above">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q.  Why does reducing how much salt you eat help prevent high blood pressure?</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options"> It reduces fluid buildup in the body
+                                    <input type="radio" name="radio8" value=" It reduces fluid buildup in the body">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">It allows vessels to relax
+                                    <input type="radio" name="radio8" value="It allows vessels to relax">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">It raises levels of HDL ("good") cholesterol
+                                    <input type="radio" name="radio8" value="It raises levels of HDL good cholesterol">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">It helps keep your heartbeat steady
+                                    <input type="radio" name="radio8" value="It helps keep your heartbeat steady">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!--6-->
+                    <div class="container mt-sm-5 my-1" style="display: flex;align-items: center;justify-content: center;">
+                        <div class="question ml-sm-5 pl-sm-5 pt-2 rounded" style="border: 1px solid white; padding: 15px 15px 15px 15px">
+                            <div class="py-2 h5"><b>Q. What can you do to control high blood pressure?</b></div>
+                            <div class="ml-md-3 ml-sm-3 pl-md-5 pt-sm-0 pt-3" id="options">
+                                <label class="options"> Get to and stay at a healthy weight
+                                    <input type="radio" name="radio9" value=" Get to and stay at a healthy weight">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">Exercise regularly
+                                    <input type="radio" name="radio9" value="Exercise regularly">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">Take the blood pressure medicine prescribed by your doctor
+                                    <input type="radio" name="radio9" value="Take the blood pressure medicine prescribed by your doctor">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <label class="options">All of the above
+                                    <input type="radio" name="radio9" value="All of the above">
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container text-center" style="border: 1px solid white;">
+                        <p>
+                            SELECT A RADIO BUTTON AND CLICK SUBMIT!
+                        </p>
+
+                        <button type="button" class="btn btn-primary button-mine" onclick="displayRadioValue()">Submit</button>
+
+
+                        <div class="container-fluid text-center" style="opacity: 0%;display: flex;align-items: center;justify-content: center;flex-direction: column;" id="for-it">
+                            <h1 class="display-3 text-white">Congratulations you earned your certificate</h1>
+                            <p id="resultFinal" style="padding: 15px 15px 15px 15px; border:1px solid rgb(255, 91, 69); margin-top: 10px;">RESULT</p>
+                        </div>
+
+            </div>
+        </div>
+    </div>
+            <div class="container text-center">
+                <img id="our-img" src="">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- SimpleLightbox plugin JS-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
+
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+<script>
+    function displayRadioValue() {
+        document.getElementById("resultFinal").innerHTML = "YOU HAVE SCORED PERFECTLY!"
+        document.getElementById("for-it").style.opacity = "100%";
+        document.getElementById("our-img").src = "/img/sertificate.jpg";
+    }
+</script>
+</body>
+</html>
